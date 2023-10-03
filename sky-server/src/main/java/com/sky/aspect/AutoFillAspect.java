@@ -25,11 +25,14 @@ public class AutoFillAspect {
     /**
      * 切入点
      */
+    // "execution(* com.sky.mapper.*.*(..))  第一个 '*' 为返回值所有，
+    // 'mapper.*.*' 这个意思是mapper中所有的类（mapper后的第一个 ‘*’），所有的方法（第二个）
+    // @annotation(com.sky.annotation.AutoFill)"  这个是要拦截的那些注解
     @Pointcut("execution(* com.sky.mapper.*.*(..)) && @annotation(com.sky.annotation.AutoFill)")
     public void autoFillPointCut(){}
 
     /**
-     * 前置通知
+     * 前置通知 @Before("切入点函数")
      */
     @Before("autoFillPointCut()")
     public void autoFill(JoinPoint joinPoint) {
