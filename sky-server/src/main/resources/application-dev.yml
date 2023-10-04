@@ -12,3 +12,9 @@ sky:
     access-key-id: LTAI5tPBUNpiqnX1aE3oMxrz
     access-key-secret: RjBtzgZGxggKthpFmauys1qU3u1Fts
     bucket-name: congmu-sky-takeaway
+
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 10
